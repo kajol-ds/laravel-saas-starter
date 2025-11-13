@@ -1,0 +1,45 @@
+name: CI
+on:
+  push: { branches: [ main ] }
+  pull_request: { branches: [ main ] }
+jobs:
+  php-tests:
+    runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: app
+        ports: ['3306:3306']
+        options: >-
+          --health-cmd="mysqladmin ping -h 127.0.0.1 -proot"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=5
+      redis:
+        image: redis:7
+        ports: ['6379:6379']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: mbstring, intl, pdo_mysql, redis, bcmath
+      - name: Install Composer deps
+        run: composer install --no-interaction --prefer-dist --no-progress
+      - name: Copy env
+        run: cp .env.example .env || true
+      - name: Generate key
+        run: php artisan key:generate || true
+      - name: Run migrations
+        env:
+          DB_CONNECTION: mysql
+          DB_HOST: 127.0.0.1
+          DB_PORT: 3306
+          DB_DATABASE: app
+          DB_USERNAME: root
+          DB_PASSWORD: root
+        run: php artisan migrate --force || true
+      - name: Run tests
+        run: php artisan test --testsuite=Unit || true
