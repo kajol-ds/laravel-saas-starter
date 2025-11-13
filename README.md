@@ -1,5 +1,8 @@
 # Laravel SaaS Starter (Teams + Billing)
 
+[![CI](https://github.com/kajol-ds/laravel-saas-starter/actions/workflows/ci.yml/badge.svg)](https://github.com/kajol-ds/laravel-saas-starter/actions/workflows/ci.yml)
+
+
 Production-ready scaffold: Teams, Stripe Billing (Tax), Roles/Permissions, Background jobs, Mail, CI/CD.
 
 ## Why
