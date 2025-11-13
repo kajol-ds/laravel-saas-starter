@@ -1,0 +1,22 @@
+{
+  "name": "budventure/billing",
+  "description": "Stripe Cashier integration for Budventure Laravel SaaS Starter",
+  "type": "library",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Budventure\\Billing\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Budventure\\Billing\\Providers\\BillingServiceProvider"
+      ]
+    }
+  },
+ "require": {
+  "php": "^8.2",
+  "laravel/framework": "^11.0 || ^12.0"
+}
+}

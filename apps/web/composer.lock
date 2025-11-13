@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c514d8f7b9fc5970bdd94287905ef584",
+    "content-hash": "f9ca7e6258e439cd3871a89a791915f3",
     "packages": [
         {
             "name": "brick/math",
@@ -65,6 +65,39 @@
                 }
             ],
             "time": "2025-08-29T12:40:03+00:00"
+        },
+        {
+            "name": "budventure/billing",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "../../packages/billing",
+                "reference": "d91f1540bce63964bb555c48111e566b54fb320b"
+            },
+            "require": {
+                "laravel/framework": "^11.0 || ^12.0",
+                "php": "^8.2"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Budventure\\Billing\\Providers\\BillingServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Budventure\\Billing\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Stripe Cashier integration for Budventure Laravel SaaS Starter",
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "carbonphp/carbon-doctrine-types",
@@ -8346,8 +8379,10 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
-    "stability-flags": {},
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "budventure/billing": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

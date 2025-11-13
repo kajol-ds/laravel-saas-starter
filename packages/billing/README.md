@@ -1,7 +1,6 @@
-# Billing Package (Cashier)
+# Budventure Billing (Package)
 
-- Plan config
-- Webhooks controller
-- Team seats handling
+Auto-discovered Laravel package. Provides billing config + routes.
 
-> TODO: extract from app once stabilized.
+- Config publish: `php artisan vendor:publish --tag=billing-config`
+- Health check: `GET /api/billing/ping` → `{"status":"ok"}`
