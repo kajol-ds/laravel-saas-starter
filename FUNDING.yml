@@ -1,0 +1,5 @@
+
+### `.github/FUNDING.yml`  *(create inside a `.github` folder)*
+```yaml
+github: [budventure-technology]
+custom: ["https://budventure.technology/contact?utm_source=github&utm_medium=funding"]
