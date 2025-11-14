@@ -1,5 +1,6 @@
 blank_issues_enabled: false
+
 contact_links:
-  - name: 💬 Q&A in Discussions
-    url: ../../discussions/categories/q-a
-    about: Ask usage questions and get help here.
+  - name: Ask a question (Q&A)
+    url: https://github.com/kajol-ds/laravel-saas-starter/discussions/new?category=q-a
+    about: If you have a question or need support, open a Q&A discussion instead of an issue.
