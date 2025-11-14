@@ -1,13 +1,13 @@
 {
   "name": "budventure/billing",
-  "description": "Stripe Cashier integration for Budventure Laravel SaaS Starter",
+  "description": "Stripe billing for Laravel apps (webhooks, ping, Horizon-ready).",
   "type": "library",
   "license": "MIT",
-  "autoload": {
-    "psr-4": {
-      "Budventure\\Billing\\": "src/"
-    }
-  },
+  "autoload": { "psr-4": { "Budventure\\Billing\\": "src/" } },
+  "extra": {
+    "laravel": { "providers": ["Budventure\\Billing\\Providers\\BillingServiceProvider"] }
+  }
+},
   "extra": {
     "laravel": {
       "providers": [
